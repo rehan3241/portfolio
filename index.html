@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional portfolio showcasing my projects and skills.">
+    <meta name="keywords" content="portfolio, web development, projects, skills">
+    <meta name="author" content="Your Name">
+    <title>My Portfolio</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            /* background-image: url("https://backgroundabstract.com/wp-content/uploads/edd/2022/02/5594016-e1656071131636.jpg"); */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: max-content;
+            /* overflow: hidden; */
+
+        }
+
+        .main {
+            width: 80%;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .skills-section {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        .skill-card {
+            width: 25%;
+            margin: 20px;
+            display: inline-block;
+        }
+
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Navbar Styling */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #ffffff;
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            height: 70px;
+            box-shadow: 0px 5px 50px 0px rgba(0, 0, 0, 0.362);
+        }
+
+        .logo{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            column-gap: 15px;
+
+            .text{
+                display: flex;
+                flex-direction: column;
+            }
+        }
+
+        /* Logo Styling */
+        .logo img {
+            height: 57px;
+            width: 57px;
+            border-radius: 50%;
+        }
+
+        .logo h3 {
+            bottom: 31px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serifs;
+            color: #000000;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .logo h4 {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            bottom: 31px;
+            font-size: large;
+            color: #000000;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        /* Navigation Links Styling */
+        .nav-links {
+            display: flex;
+            list-style: none;
+            column-gap: 10px;
+        }
+
+        .nav-links a {
+            color: #0e0c0c;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            text-decoration: none;
+            font-size: 30px;
+            transition: color 0.3s ease;
+            border: 2px solid black;
+            padding: 7px;
+            border-radius: 10px
+        }
+
+        .nav-links a:hover {
+            background-color: #ffffff;
+            color: #f60606;
+            border: 2px solid #000000;
+            box-shadow: 5px 5px 0px #000000;
+        }
+
+        /* Hamburger Menu Styling */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .hamburger .bar {
+            width: 25px;
+            height: 3px;
+            background-color: #0a0909;
+            margin: 4px 0;
+            transition: all 0.3s ease;
+        }
+
+        /* Responsive Design */
+
+        @media (max-width: 1024px) {
+            .nav-links {
+                height: 300px;
+                position: absolute;
+                background-color: #0000000e;
+                flex-direction: column;
+                width: 100%;
+                text-align: center;
+                transform: translateX(100%);
+                transition: transform 0.3s ease;
+                backdrop-filter: blur(10px);
+                gap: 40px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                z-index: 99;
+            }
+            
+            .res-nav{
+                top: 70px;
+                right: 100%;
+                z-index: 99;
+            }
+
+            .res-nav-close{
+                top: 70px;
+                left: -2000px
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+        }
+
+        @media (max-width: 768px) {
+           
+        }
+
+        .main {
+            justify-content: space-around;
+            display: flex;
+            align-items: center;
+        }
+
+        .he {
+            color: rgb(229, 24, 24);
+        }
+
+        .mai {
+            font-size: 50px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            padding-top: 70px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .em {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 20px;
+            font-weight: lighter;
+            line-height: 30px;
+
+        }
+
+        /* From Uiverse.io by Gautammsharma */
+        .comic-button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 30px;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            color: #fff;
+            background-color: #e72828;
+            border: 2px solid #000;
+            border-radius: 10px;
+            box-shadow: 5px 5px 0px #000;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .comic-button:hover {
+            background-color: #fff;
+            color: #dc1e1e;
+            border: 2px solid #e51c1c;
+            box-shadow: 5px 5px 0px #da1c1c;
+        }
+
+        .comic-button:active {
+            background-color: #fcf414;
+            box-shadow: none;
+            transform: translateY(4px);
+        }
+
+
+        .img1 {
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: 5px 10px 15px 15px rgba(0, 0, 0, 0.437);
+            margin-top: 80px;
+        }
+
+
+        .skills-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .skills-section h2 {
+            font-size: 50px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            color: #e61313;
+            margin-bottom: 40px;
+        }
+
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .skill-card {
+            background-color: #fef7f7;
+            border-radius: 10px;
+            box-shadow: 0 5px 9px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 250px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.475);
+        }
+
+        .skill-logo {
+            width: 110px;
+            height: 100px;
+            margin-bottom: 15px;
+        }
+
+        .skill-card h3 {
+            font-size: 30px;
+            color: #34495e;
+            margin-bottom: 10px;
+        }
+
+        .skill-card p {
+            font-size: 16px;
+            color: #666;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        .main2 {
+            position: relative;
+            top: 120px;
+        }
+
+        #contact {
+            position: relative;
+            top: 80px;
+            left: 50%;
+            transform: translateX(-50%);
+
+        }
+
+        .form {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+        }
+
+        .form h2 {
+            font-size: 38px;
+            color: #f70f0f;
+            position: relative;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 50px;
+            bottom: 50px;
+
+            animation: fadeIn 1s ease-in-out;
+            /* Fade-in animation for the heading */
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .form_container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            width: 100%;
+            max-width: 500px;
+            padding: 35px;
+            background-color: #f8eded;
+            border-radius: 10px;
+            box-shadow: 0 15px 20px rgba(0, 0, 0, 0.445);
+            animation: slideIn 0.8s ease-out;
+            /* Slide-in animation for the form */
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .f1 {
+            padding: 12px 16px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            outline: none;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+        }
+
+        .f1:focus {
+            border-color: #f70f0f;
+            box-shadow: 0 0 8px rgba(255, 55, 20, 0.3);
+            transform: scale(1.02);
+            /* Slight scale-up on focus */
+        }
+
+        textarea.f1 {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .f_btn {
+            padding: 12px 24px;
+            font-size: 16px;
+            font-weight: 600;
+            color: #fff;
+            background-color: #f70f0f;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            animation: pulse 2s infinite;
+            /* Pulse animation for the button */
+        }
+
+        .f_btn:hover {
+            background-color: #b60404;
+            transform: translateY(-3px);
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+
+
+        .footer {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            /* background-image: url("https://backgroundabstract.com/wp-content/uploads/edd/2022/02/5594016-e1656071131636.jpg"); */
+            color: #000000;
+            text-align: center;
+            position: relative;
+            top: 100px;
+        }
+
+        #socials {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 15px;
+        }
+
+        .social_icon {
+            color: #f70f0f;
+            font-size: 24px;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .social_icon:hover {
+            color: #630000;
+            transform: translateY(-5px);
+
+        }
+
+        .footer p {
+            font-size: 14px;
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            .head {
+                padding: 20px 5%;
+            }
+
+            .main {
+                flex-direction: column;
+                padding: 40px 5%;
+                text-align: center;
+            }
+
+            .main_left {
+                max-width: 100%;
+            }
+
+            .main_right {
+                width: 100%;
+                height: auto;
+                margin-top: 20px;
+            }
+
+            .row {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .card {
+                width: 100%;
+            }
+
+            .form_container {
+                width: 90%;
+            }
+
+            .img1{
+                margin-top: 60px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo img{
+                height: 40px;
+                width: 40px;
+            }
+
+            .logo{
+                
+                h3{
+                    font-size: 15px;
+                }
+
+                h4{
+                    font-size: 12px;
+                }
+            }
+
+            .nvabar{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+
+            .img1{
+                width: 200px;
+                height: 200px;
+            }
+            .mh1 {
+                font-size: 36px;
+            }
+
+            .pp1 {
+                font-size: 16px;
+            }
+
+            .buttons {
+                gap: 15px;
+            }
+
+            .button {
+                font-size: 16px;
+                padding: 6px 12px;
+            }
+
+            .cta_button {
+                font-size: 14px;
+                padding: 10px 20px;
+            }
+
+            .form h2 {
+                font-size: 24px;
+            }
+
+            .f1 {
+                font-size: 14px;
+            }
+
+            .f_btn {
+                font-size: 14px;
+                padding: 10px 20px;
+            }
+        }
+
+        .h2 {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+        }
+
+        .skill-sectio {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .skill-sectio h2 {
+            font-size: 50px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            color: #e21212;
+            margin-bottom: 40px;
+        }
+
+        .skill-containe {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .skil-car {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 5px 9px rgba(0, 0, 0, 0.1);
+            height: auto;
+            padding: 20px;
+            width: 360px;
+            text-align: center;
+            justify-content: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 0.1px solid black;
+        }
+
+        .skil-car:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.475);
+        }
+
+        .skil-log {
+            width: 110px;
+            height: 100px;
+            margin-bottom: 15px;
+        }
+
+        .skil-car h3 {
+            font-size: 30px;
+            color: #34495e;
+            margin-bottom: 10px;
+        }
+
+        .skil-car p {
+            font-size: 16px;
+            color: #666;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        .m {
+            position: relative;
+            /* top: 10px; */
+            padding: 40px;
+
+        }
+
+        .pr {
+            text-decoration: none;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 20px;
+            color: #000000;
+            background-color: #da2828;
+            border-radius: 4px;
+            height: 28px;
+            width: 60px;
+        }
+
+        .pr a {
+            text-decoration: none;
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="https://imgcdn.stablediffusionweb.com/2024/3/11/ee4d210e-c182-4aed-abed-336c3b78b84c.jpg"
+                    alt="">
+
+                <div class="box">
+                    <h3 class="h3">Rehan ali Sayyed</h3>
+                    <h4 class="h4">Web developer</h4>
+                </div>
+            </div>  
+
+            <div class="hamburger" aria-label="Toggle Navigation">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+
+            <!-- Navigation Links -->
+            <ul class="nav-links res-nav-close">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#My Skill" class="nav-link">My Skill</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="main">
+        <div class="mai">
+            <p>Hello,I'm a<span class="he"> Rehan ali sayyed</span></p>
+            <p class="em">I am a final-year Bachelor of Computer Applications (BCA) student with a strong passion <br>
+                for technology and programming.I have honed my skills in various programming languages,<br>
+                including C, C++, Java, Advanced Java Python, HTML, and CSS, enabling me to develop robust <br>
+                and innovative solutions.With a solid foundation in software development and a keen interest <br>
+                in web and application development, I am eager to commibuteto cutting-edge projects and <br>continually
+                expand my
+                knowledge in the field.
+                Explore my portfolio to discover my journey <br>and projects!</p><br>
+
+            <!-- From Uiverse.io by Gautammsharma -->
+            <a href="#contact" class="comic-button">Hire Me</a>
+        </div>
+        <img class="img1" src="https://imgcdn.stablediffusionweb.com/2024/3/11/ee4d210e-c182-4aed-abed-336c3b78b84c.jpg"
+            alt="" height="450px" width="450px">
+    </section>
+    <section class="main2">
+        <div class="lg">
+            <section class="skills-section" id="My Skill">
+                <h2>My Skills</h2>
+                <div class="skills-container">
+                    <!-- HTML -->
+                    <div class="skill-card">
+                        <img src="https://cdn-icons-png.flaticon.com/512/5968/5968267.png" alt="HTML Logo"
+                            class="skill-logo">
+                        <h3>HTML</h3>
+                        <p>Proficient in creating structured and semantic web pages using HTML5. Experienced in building
+                            responsive and accessible websites.</p>
+                    </div>
+
+                    <!-- CSS -->
+                    <div class="skill-card">
+                        <img src="https://cdn-icons-png.flaticon.com/512/5968/5968242.png" alt="CSS Logo"
+                            class="skill-logo">
+
+                        <h3>CSS</h3>
+                        <p>Skilled in styling web pages with CSS3, including animations, flexbox, grid layouts, and
+                            responsive design principles.</p>
+                    </div>
+
+                    <!-- JavaScript -->
+                    <div class="skill-card">
+                        <img src="https://static.vecteezy.com/system/resources/previews/027/127/463/non_2x/javascript-logo-javascript-icon-transparent-free-png.png"
+                            alt="JavaScript Logo" class="skill-logo">
+                        <h3>JavaScript</h3>
+                        <p>Experienced in building dynamic and interactive web applications using JavaScript, ES6+, and
+                            modern frameworks like React.</p>
+                    </div>
+
+                    <!-- Java -->
+                    <div class="skill-card">
+                        <img src="https://cdn-icons-png.flaticon.com/512/226/226777.png" alt="Java Logo"
+                            class="skill-logo">
+                        <h3>Java</h3>
+                        <p>Proficient in Java programming, including object-oriented design, data structures, and
+                            building scalable applications.</p>
+                    </div>
+
+                    <!-- C -->
+                    <div class="skill-card">
+                        <img src="https://img.icons8.com/?size=512&id=40670&format=png" alt="C Logo" class="skill-logo">
+                        <h3>C</h3>
+                        <p>Strong foundation in C programming, including memory management, pointers, and low-level
+                            system programming.</p>
+                    </div>
+
+                    <!-- C++ -->
+                    <div class="skill-card">
+                        <img src="https://cdn-icons-png.flaticon.com/512/6132/6132222.png" alt="C++ Logo"
+                            class="skill-logo">
+                        <h3>C++</h3>
+                        <p>Experienced in C++ programming, including STL, algorithms, and game development using Unreal
+                            Engine.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section>
+
+    <br><br><br><br><br><br>
+    <hr>
+
+    <section class="m">
+        <div class="l">
+            <section class="skill-sectio" id="projects">
+                <h2>MY Projects</h2>
+                <div class="skill-containe">
+
+                    <div class="skil-car">
+                        <img src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/pokemon-logo-design-template-eb355bb15c4344c1e0695a39ecadae50_screen.jpg?ts=1697729436"
+                            class="skil-log" width="20px">
+                        <h3>Pokedex</h3>
+                        <p>Proficient in creating structured and semantic web pages using HTML5. Experienced in building
+                            responsive and accessible websites.</p>
+                        <br>
+                        <button class="pr"><a href="pokemon.html">View</a></button>
+                    </div>
+
+                    <!-- CSS -->
+                    <div class="skil-car">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnTSoM7NLX9Zb9gtoWXSucRCK2EF3jE_JCfG673gfXYdGSQx5gikvKpqnnS60Iip04Zqo&usqp=CAU"
+                            class="skil-log">
+
+                        <h3>Catch The Insect</h3>
+                        <p>Skilled in styling web pages with CSS3, including animations, flexbox, grid layouts, and
+                            responsive design principles.</p>
+                        <br>
+                        <button class="pr"><a href="2index.html">View</a></button>
+                    </div>
+
+                    <!-- JavaScript -->
+                    <div class="skil-car">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTl8zwVyy8wiDibyIOFblqDaR4621S8pcelD1r8meymiQAolc8IPmgZXPvwmEwi50PhFjc&usqp=CAU"
+                            class="skil-log">
+                        <h3>Search a Github User</h3>
+                        <p>Experienced in building dynamic and interactive web applications using JavaScript, ES6+, and
+                            modern frameworks like React.</p>
+                        <br>
+                        <button class="pr"><a href="3index.html">View</a></button>
+                    </div>
+                </div>
+        </div>
+    </section>
+    </div>
+    </section>
+    <br>
+    <hr>
+    <section id="contact" class="form">
+        <h2 class="h2">Contact Me</h2>
+        <form id="my1"  class="form_container" action="https://formspree.io/f/xbldjoyr" method="post">
+            <input class="f1" type="text" placeholder="Enter Your Name" name="Name" required>
+            <input class="f1" type="email" placeholder="Email Address" name="Email" required>
+            <textarea class="f1" placeholder="Your Message" rows="4" name="Message"></textarea>
+            <button class="f_btn" type="submit">Submit</button>
+        </form>
+    </section>
+    <section id="socials" class="footer">
+        <div class="socials">
+            <a href="https://github.com" target="_blank" class="social_icon"><i class="fab fa-github"></i></a>
+            <a href="https://linkedin.com" target="_blank" class="social_icon"><i class="fab fa-linkedin"></i></a>
+            <a href="https://twitter.com" target="_blank" class="social_icon"><i class="fab fa-twitter"></i></a>
+            <a href="https://instagram.com" target="_blank" class="social_icon"><i class="fab fa-instagram"></i></a>
+        </div>
+        <p>&copy; 2023 Rehan Ali Sayyed. All rights reserved.</p>
+    </section>
+
+
+    <script>
+        // const form=querySelector(".form_container")
+        const ham = document.querySelector(".hamburger")
+        const navlinks = document.querySelector(".nav-links")
+
+        ham.addEventListener("click", function() {
+            if(navlinks.classList.contains('res-nav')){
+                navlinks.classList.remove("res-nav")
+                navlinks.classList.add("res-nav-close")
+            } else {
+                navlinks.classList.add("res-nav")
+                navlinks.classList.remove("res-nav-close")
+            }
+            
+          document.getElementsByTagName("button").reset()
+
+           
+        })
+        
+    </script>
+</body>
+
+</html>
